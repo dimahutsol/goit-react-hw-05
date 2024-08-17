@@ -1,0 +1,30 @@
+.home {
+	margin: 20px 0;
+}
+
+.title {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	row-gap: 30px;
+}
+
+.listItemLink {
+	font-size: 18px;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 10px;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: white;
+	}
+}

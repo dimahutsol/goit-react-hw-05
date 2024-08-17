@@ -1,0 +1,20 @@
+.header {
+	box-shadow: var(--shadow);
+	background-color: #d6d0d0;
+	padding: 20px 0;
+}
+
+.nav {
+	display: flex;
+	gap: 20px;
+}
+
+.link {
+	border-radius: 5px;
+	font-size: 18px;
+	transition: all 0.2s ease-in-out;
+}
+
+.linkActive {
+	color: var(--accent);
+}
