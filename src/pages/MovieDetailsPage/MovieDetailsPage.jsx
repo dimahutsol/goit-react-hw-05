@@ -95,7 +95,7 @@ const MovieDetailsPage = () => {
 						</div>
 					</div>
 				)}
-				<Suspense fallback={<h2>MovieDetailsPage Suspense 1</h2>}>
+				<Suspense fallback={<h2>Loading...</h2>}>
 					<Outlet />
 				</Suspense>
 			</Container>

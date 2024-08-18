@@ -15,7 +15,7 @@ const MovieReviews = lazy(() =>
 
 function App() {
 	return (
-		<Suspense fallback={<h2>App suspense</h2>}>
+		<Suspense fallback={<h2>Loading...</h2>}>
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<HomePage />} />
