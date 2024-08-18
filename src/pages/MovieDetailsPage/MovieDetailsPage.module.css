@@ -1,0 +1,68 @@
+.backButton {
+	font-size: 16px;
+	padding: 10px;
+	margin: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--accent);
+	color: white;
+	box-shadow: var(--shadow);
+	transition: background-color 0.2s ease-in-out;
+	&:hover,
+	&:focus {
+		background-color: var(--accentHover);
+	}
+}
+
+.detailsPage {
+	padding-bottom: 20px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+}
+.title {
+	font-size: 24px;
+}
+
+.mainPart {
+	display: flex;
+	gap: 20px;
+}
+
+.category {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.subtitle {
+	margin-bottom: 10px;
+}
+
+.additional {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.link {
+	border-radius: 5px;
+	font-size: 18px;
+	transition: all 0.2s ease-in-out;
+}
+
+.linkActive {
+	color: var(--accent);
+}

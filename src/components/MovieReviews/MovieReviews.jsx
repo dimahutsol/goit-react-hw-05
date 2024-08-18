@@ -11,6 +11,16 @@ const MovieReviews = () => {
 	const { movieId } = useParams();
 	const notifyWrong = () => toast.error('Something went wrong');
 
+	const convertDate = isoDate => {
+		let date = new Date(isoDate);
+
+		let day = String(date.getUTCDate()).padStart(2, '0');
+		let month = String(date.getUTCMonth() + 1).padStart(2, '0');
+		let year = date.getUTCFullYear();
+
+		return `${day}.${month}.${year}`;
+	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -26,12 +36,15 @@ const MovieReviews = () => {
 	return (
 		<div className={clsx()}>
 			{reviews.length > 0 ? (
-				<ul>
+				<ul className={clsx(s.list)}>
 					{reviews.map(review => (
-						<li key={review.id}>
-							<p>Author: {review.author}</p>
-							<p>{review.content}</p>
-							<p>{review.created_at}</p>
+						<li className={clsx(s.listItem)} key={review.id}>
+							<p className={clsx(s.author)}>
+								<span className={clsx(s.category)}>Author: </span>
+								{review.author}
+							</p>
+							<p className={clsx(s.content)}>{review.content}</p>
+							<p className={clsx(s.date)}>{convertDate(review.created_at)}</p>
 						</li>
 					))}
 				</ul>

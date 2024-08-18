@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 const MovieCast = () => {
 	const [actors, setActors] = useState([]);
 	const [configuration, setConfiguration] = useState();
+	console.log(configuration);
 
 	const { movieId } = useParams();
 	const notifyWrong = () => toast.error('Something went wrong');
@@ -27,18 +28,22 @@ const MovieCast = () => {
 	}, [movieId]);
 
 	return (
-		<div className={clsx()}>
-			<ul>
+		<div>
+			<ul className={clsx(s.list)}>
 				{actors.map(actor => (
-					<li key={actor.id}>
+					<li className={clsx(s.listItem)} key={actor.id}>
 						{actor.profile_path && (
 							<img
-								src={`${configuration.images.base_url}w342${actor.profile_path}`}
+								className={clsx(s.image)}
+								src={`${configuration.images.base_url}w185${actor.profile_path}`}
 								alt={actor.original_name}
 							/>
 						)}
-						<h3>{actor.original_name}</h3>
-						<p>Character: {actor.character}</p>
+						<h3 className={clsx(s.name)}>{actor.original_name}</h3>
+						<p>
+							<span className={clsx(s.category)}>Character:</span>{' '}
+							{actor.character}
+						</p>
 					</li>
 				))}
 			</ul>

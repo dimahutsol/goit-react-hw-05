@@ -1,0 +1,41 @@
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: center;
+}
+
+.oops {
+	font-size: 56px;
+}
+
+.text {
+	font-size: 24px;
+}
+
+.button {
+	font-size: 24px;
+	padding: 15px;
+	margin: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--accent);
+	color: white;
+	box-shadow: var(--shadow);
+	transition: background-color 0.2s ease-in-out;
+	&:hover,
+	&:focus {
+		background-color: var(--accentHover);
+	}
+}

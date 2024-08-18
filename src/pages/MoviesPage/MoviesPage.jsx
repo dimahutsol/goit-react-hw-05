@@ -5,6 +5,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from '../../services/api';
 import toast from 'react-hot-toast';
 import Container from '../../components/Container/Container';
+import MoviesList from '../../components/MoviesList/MoviesList';
 
 const MoviesPage = () => {
 	const [inputValue, setInputValue] = useState('');
@@ -21,6 +22,7 @@ const MoviesPage = () => {
 	};
 
 	const handleSearch = async () => {
+		if (!inputValue) return;
 		try {
 			searchParams.set('query', inputValue);
 			setSearchParams(searchParams);
@@ -52,19 +54,11 @@ const MoviesPage = () => {
 	return (
 		<div className={clsx()}>
 			<Container>
-				<div>
+				<div className={clsx(s.form)}>
 					<input type='text' value={inputValue} onChange={handleChangeInput} />
 					<button onClick={handleSearch}>Search</button>
 				</div>
-				<ul>
-					{movies.map(movie => (
-						<li key={movie.id}>
-							<Link to={`${movie.id}`} state={location}>
-								{movie.original_title}
-							</Link>
-						</li>
-					))}
-				</ul>
+				<MoviesList movies={movies} />
 			</Container>
 		</div>
 	);

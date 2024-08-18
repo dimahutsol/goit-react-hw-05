@@ -5,10 +5,15 @@ import Container from '../../components/Container/Container';
 
 const NotFoundPage = () => {
 	return (
-		<div className={clsx()}>
+		<div className={clsx(s.wrapper)}>
 			<Container>
-				<h2>NotFoundPage</h2>
-				<Link to='/'>Go Home</Link>
+				<div className={clsx(s.box)}>
+					<h2 className={clsx(s.oops)}>{`:(`}</h2>
+					<p className={clsx(s.text)}>There is no such page</p>
+					<Link className={clsx(s.button)} to='/'>
+						Go Home
+					</Link>
+				</div>
 			</Container>
 		</div>
 	);

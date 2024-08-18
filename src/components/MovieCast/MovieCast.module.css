@@ -1,0 +1,32 @@
+.list {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.listItem {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.image {
+	border-radius: 10px;
+	width: 150px;
+	/* height: 100px; */
+}
+
+.name {
+	font-size: 20px;
+}
+
+.category {
+	font-size: 18px;
+	font-weight: 600;
+}
